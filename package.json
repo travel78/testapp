@@ -1,0 +1,36 @@
+{
+  "name": "testapp",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node server",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travel78/testapp.git"
+  },
+  "author": "Yuriy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/travel78/testapp/issues"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react"
+  ],
+  "homepage": "https://github.com/travel78/testapp#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
