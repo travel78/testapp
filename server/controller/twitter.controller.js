@@ -2,10 +2,10 @@ const Twitter = require('twitter');
 const twitterService = require('../service/twitter.service');
 
 const _oauth = {
-    consumer_key: process.env.TWITTER_CONSUMER_KEY || 'wprHVKdW68MX5Pa38aMtmmYdi',
-    consumer_secret: process.env.TWITTER_CONSUMER_SECRET || 'aZ2UCcBbNemI9VY75wnkoyRNRZTLeLTbRwdkE1k8Ki5Bh1i6aH',
-    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY || '977158565147414529-ROJ4Hm44VWZIHu2dQx0J01hGY57hYsl',
-    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET || 'i21bWaKqyiCTDVdXIaEYZGQ6fE0WMlbzoIh5k323XgVFJ'
+    consumer_key: process.env.TWITTER_CONSUMER_KEY || '',
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET || '',
+    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY || '',
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET || ''
 };
 const tRequest = new Twitter(_oauth);
 
