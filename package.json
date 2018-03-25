@@ -31,6 +31,7 @@
   ],
   "homepage": "https://github.com/travel78/testapp#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "twitter": "^1.7.1"
   }
 }

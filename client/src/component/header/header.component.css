@@ -1,0 +1,33 @@
+.header {
+    height: 60px;
+    padding: 0 50px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rosybrown;
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+h1 {
+    color: whitesmoke;
+    margin: 0;
+}
+
+input {
+    height: 30px;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+button {
+    height: 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    margin-left: 10px;
+}
