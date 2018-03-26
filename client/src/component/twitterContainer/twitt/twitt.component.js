@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Like from 'react-icons/lib/fa/heart-o';
 import Retwitt from 'react-icons/lib/fa/share-square-o';
 
 import './twitt.component.css';
 
 export default class Twitt extends Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className="twitt">

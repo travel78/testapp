@@ -9,11 +9,13 @@ import TwitterContainer from './component/twitterContainer/twitter.container';
 class App extends Component {
 
     componentWillMount() {
-        this.counterState = StateProvider.createState('twitts', {twitts: []});
+        StateProvider.createState('twitts', {twitts: []});
+        StateProvider.createState('spinner', {spinner: false});
     }
 
     componentWillUnmount() {
         StateProvider.destroy('twitts');
+        StateProvider.destroy('spinner');
     }
 
     render() {

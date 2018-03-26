@@ -4,8 +4,8 @@ Here is simple example how to bind node and react and deploy it on heroku automa
 our github repository.
 This App get twitts from twitter api by username and represents them
 
-You can trz it here:
-* [Yuriy app](https://rometool..)
+You can try it here:
+* [Yuriy app](https://yuriy-react.herokuapp.com)
 
 ## Getting Started
 

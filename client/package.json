@@ -8,6 +8,7 @@
     "react-dom": "^16.2.0",
     "react-icons": "^2.2.7",
     "react-scripts": "1.1.1",
+    "react-spinners": "^0.2.6",
     "react-state-provider": "0.0.4"
   },
   "scripts": {
