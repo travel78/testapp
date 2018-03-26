@@ -1,27 +1,11 @@
-import {Service} from 'react-services-injector';
-import {injector} from 'react-services-injector';
-import {Subject} from "rxjs";
+import {StateProvider} from 'react-state-provider';
 
-class TwitterService extends Service {
-    twittLineList = new Subject();
+import getTwittLineByName from './http.service';
 
-    constructor() {
-        super();
-    }
+export default function findAndPushTwitterLine(name) {
 
-    getTwitterLine() {
-        return this.twittLineList;
-    }
-
-    findAndPushTwitterLine(name) {
-        this.services.HttpService.getTwittLineByName(name).then((res) => {
-            this.twittLineList.next(res.data);
-        });
-    }
+    getTwittLineByName(name).then((res) => {
+        StateProvider.getState('twitts').update('twitts', res);
+    });
 }
 
-TwitterService.publicName = 'TwitterService';
-
-export default injector.connect(TwitterService, {
-    toRender: ['HttpService']
-});

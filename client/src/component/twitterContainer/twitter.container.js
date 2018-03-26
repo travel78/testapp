@@ -1,39 +1,35 @@
-import React, {Component} from 'react';
-import './twitter.container.css';
-import {injector} from 'react-services-injector';
-import Twitt from "./twitt/twitt.component";
+import React, { Component } from 'react';
+import { StateProvider } from 'react-state-provider';
 
-class TwitterContainer extends Component {
-    TwitterService;
-    subscription;
+import './twitter.container.css';
+import Twitt from './twitt/twitt.component';
+
+export default class TwitterContainer extends Component {
 
     constructor() {
         super();
-        this.state = {tweets:[]};
+        this.state = {twitts: []};
+        this.twittsState = StateProvider.getState('twitts');
     }
 
-    componentWillMount() {
-        this.TwitterService = this.services.TwitterService;
-        this.subscription = this.TwitterService.getTwitterLine().subscribe((data) => {
-            this.setState({tweets:data});
+    componentDidMount() {
+        this.twittsState.observe('twitts', (twitts) => {
+            this.setState({twitts: twitts});
         });
     }
 
+
     componentWillUnmount() {
-        this.subscription.unsubscribe();
+        this.twittsState.destroy('twitts');
     }
 
     render() {
         return (
             <div className="twitter_container">
-                {this.state.tweets.map((item,id)=>{
+                {this.state.twitts.map((item, id) => {
                     return <Twitt key={id} data={item}></Twitt>
                 })}
             </div>
         );
     }
 }
-
-export default injector.connect(TwitterContainer, {
-    toRender: ['TwitterService']
-});

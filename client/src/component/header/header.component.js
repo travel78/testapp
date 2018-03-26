@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+
 import './header.component.css';
-import {injector} from 'react-services-injector';
+import findAndPushTwitterLine from '../../shared/service/twitter.service';
 
 
-class Header extends Component {
-    TwitterService;
+export default class Header extends Component {
 
     constructor(props) {
         super(props);
@@ -13,13 +13,9 @@ class Header extends Component {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    componentWillMount() {
-        this.TwitterService = this.services.TwitterService;
-    }
-
     onLoadTwitts() {
         if (this.state.name.length > 1) {
-            this.TwitterService.findAndPushTwitterLine(this.state.name);
+            findAndPushTwitterLine(this.state.name);
             this.setState({name: ''});
         }
     }
@@ -30,17 +26,14 @@ class Header extends Component {
 
     render() {
         return (
-            <header className="header">
+            <header className='header'>
                 <h1>Give me the best Name</h1>
-                <div className="search_block">
-                    <input type="text" value={this.state.name} onChange={this.handleChange} placeholder="Enter here username"/>
+                <div className='search_block'>
+                    <input type='text' value={this.state.name} onChange={this.handleChange}
+                           placeholder='Enter here username'/>
                     <button onClick={this.onLoadTwitts} disabled={this.state.name.length < 2}>Load twitts</button>
                 </div>
             </header>
         );
     }
 }
-
-export default injector.connect(Header, {
-    toRender: ['TwitterService']
-});

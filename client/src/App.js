@@ -1,14 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { StateProvider } from 'react-state-provider';
+
 import './App.css';
-import Header from "./component/header/header.component";
-import TwitterContainer from "./component/twitterContainer/twitter.container";
+import Header from './component/header/header.component';
+import TwitterContainer from './component/twitterContainer/twitter.container';
 
-import {injector} from 'react-services-injector';
-import services from './shared/service/services';
-
-injector.register(services);
 
 class App extends Component {
+
+    componentWillMount() {
+        this.counterState = StateProvider.createState('twitts', {twitts: []});
+    }
+
+    componentWillUnmount() {
+        StateProvider.destroy('twitts');
+    }
+
     render() {
         return (
             <div className="App">

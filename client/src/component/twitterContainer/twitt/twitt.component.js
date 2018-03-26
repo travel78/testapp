@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import './twitt.component.css';
 import Like from 'react-icons/lib/fa/heart-o';
 import Retwitt from 'react-icons/lib/fa/share-square-o';
+
+import './twitt.component.css';
 
 export default class Twitt extends Component {
 
