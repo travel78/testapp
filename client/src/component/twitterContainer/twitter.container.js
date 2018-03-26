@@ -14,6 +14,7 @@ export default class TwitterContainer extends Component {
 
     componentDidMount() {
         this.twittsState.observe('twitts', (twitts) => {
+            console.log(twitts);
             this.setState({twitts: twitts});
         });
     }
